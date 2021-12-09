@@ -11,33 +11,38 @@
 Target 1
 ```bash
 $ nmap -sV --version-all 192.168.1.110
-![](Images/sVscan_Target1.png)
 ```
+![](Images/sVscan_Target1.png)
+
 Target 2
 ```bash
 $ nmap -sV -O 192.168.1.115
-![](Images/sVscan_Target2.png)
 ```
+![](Images/sVscan_Target2.png)
+
 ELK Server
 ```bash
 $ nmap -sV --version-all 192.168.1.100
-![](Images/sVscan_ELK.png)
 ```
+![](Images/sVscan_ELK.png)
+
 Capstone
 ```bash
 $ nmap -sV --version-all 192.168.1.105
- ![](Images/sVscan_Capstone.png)
 ```
+ ![](Images/sVscan_Capstone.png)
+
 Kali
 ```bash
 $ nmap -sV --version-all 192.168.1.90
-![](Images/sVscan_Kali.png)
 ```
+![](Images/sVscan_Kali.png)
+
 NAT Switch
 ```bash
 $ nmap -sV --version-all 192.168.1.1
-![](Images/sVscan_NAT.png)
 ```
+![](Images/sVscan_NAT.png)
 
 #### This scan identifies the services below as potential points of entry for Targets 1 and 2:
 - Target 1
@@ -54,8 +59,8 @@ $ nmap -sV --version-all 192.168.1.1
 
 #### The following vulnerabilities were identified on Target 1:
 
-- Exposure of Information through Directory Listing (CWE-548)
-- Severity: Low
+- Exposure of Information through Directory Listing (CWE-548)\
+- Severity: Low\
 ![](Images/WP_directory.png)
 ![](Images/michael_directory.png)
 ![](Images/WP_xmlrpc.php)
