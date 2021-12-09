@@ -46,13 +46,13 @@ $ nmap -sV --version-all 192.168.1.1
 
 #### This scan identifies the services below as potential points of entry for Targets 1 and 2:
 
-Target 1\
+**Target 1**
 | PORT     | STATE      | SERVICE    | VERSION                                      |
 |----------|------------|------------|----------------------------------------------|
 | 22/tcp   | open       | ssh        | OpenSSH 6.7p1 Debian 5+deb8u4 (protocol 2.0) |
 | 80/tcp   | open       | http       | Apache httpd 2.4.10 (Debian)                 |
 
-Target 2\
+**Target 2**
 | PORT     | STATE      | SERVICE    | VERSION                                      |
 |----------|------------|------------|----------------------------------------------|
 | 22/tcp   | open       | ssh        | OpenSSH 6.7p1 Debian 5+deb8u4 (protocol 2.0) |
@@ -65,7 +65,7 @@ Target 2\
 ![](/Images/WP_directory.png)
 ![](/Images/michael_directory.png)
 ![](/Images/WP_xmlrpc.php.png)
-![](/Images/(wp-login.php.png)
+![](/Images/wp-login.php.png)
 ![](/Images/WP_OS_version.png)
 
 - Weak Password Requirements (CWE-521)
@@ -84,9 +84,9 @@ Target 2\
 ![](Images/root_escalation.png)
 
 #### In addition to the vulnerabilites above, these vulnerabilities were exploited on Target 2:
-- Critical Vulnerability 1 (CWE/CVE#)
-- Severity:
-	_TODO: INSERT SCREENSHOTS HERE_
+- Remote Code Execution (CVE-2016-10033)
+- Severity: High
+	_![](Images/sVscan_Target2.png_
 
 - Critical Vulnerability 2 (CWE/CVE#)
 - Severity:
