@@ -60,52 +60,51 @@ $ nmap -sV --version-all 192.168.1.1
 
 #### The following vulnerabilities were identified on Target 1:
 
-- Exposure of Information through Directory Listing (CWE-548)
-- Severity: Low\
+1. Exposure of Information through Directory Listing (CWE-548)
+  - Severity: Low\
 ![](/Images/WP_directory.png)
 ![](/Images/michael_directory.png)
 ![](/Images/WP_xmlrpc.php.png)
 ![](/Images/wp-login.php.png)
 ![](/Images/WP_OS_version.png)
 
-- Weak Password Requirements (CWE-521)
-- Severity: High\
+2. Weak Password Requirements (CWE-521)
+  - Severity: High\
 ![](Images/michael_ssh.png)
 ![](Images/cracking_steven.png)
 
-- Improper Access Control (CWE-284)
-- Severity: High\
+3. Improper Access Control (CWE-284)
+  - Severity: High\
 ![](Images/wp-config.php.png)
 ![](Images/WPDB_login.png)
 ![](Images/hashed_pwds.png)
 
-- Improper Privilege Management (CWE-269)
-- Severity: High\
+4. Improper Privilege Management (CWE-269)
+  - Severity: High\
 ![](Images/root_escalation.png)
 
 #### In addition to the vulnerabilites above, these vulnerabilities were exploited on Target 2:
-- Remote Code Execution (CVE-2016-10033)
-- Severity: High
-	_![](Images/sVscan_Target2.png_
+1. Remote Code Execution (CVE-2016-10033)
+- Severity: High\
+![](Images/nikto1.png)\
+![](Images/nikto2.png)\
+![](Images/gobuster.png)\
+![](Images/searchsploit_phpmailer.png)
 
-- Critical Vulnerability 2 (CWE/CVE#)
-- Severity:
-	_TODO: INSERT SCREENSHOTS HERE_
-
-- Critical Vulnerability 3 (CWE/CVE#)
-- Severity:
-	_TODO: INSERT SCREENSHOTS HERE_
+2. Command Injection (CWE-77)
+- Severity: High\
+TODO: INSERT SCREENSHOTS HERE
 
 ### Exploitation
-#### The Red Team was able to penetrate `Target 1` and retrieve the following confidential data:
+#### The Red Team was able to penetrate Target 1 and retrieve the following confidential data:
 - `flag1.txt`: _b9bbcb33e11b80be759c4e844862482d_
   - **Exploit Used: _CWE-548: Exposure of Information through Directory Listing_**
-  - _Command: $ nano /var/www/html/service.html_
+  - _Command: '''bash $ nano /var/www/html/service.html_ '''
 ![](Images/t1_flag1.png)
 
 - `flag2.txt`: _fc3fd58dcdad9ab23faca6e9a36e581c_
   - **Exploit Used: _CWE-521: Weak Password Requirements_**
-  - _Command: $ cat /var/www/flag2.txt_
+  - _Command: $ cat /var/www/flag2.txt_\
 ![](Images/t1_flag2.png)
 
 - `flag3.txt`: _afc01ab56b50591e7dccf93122770cd2_
