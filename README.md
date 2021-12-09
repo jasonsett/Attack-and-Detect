@@ -45,13 +45,14 @@ $ nmap -sV --version-all 192.168.1.1
 ![](Images/sVscan_NAT.png)
 
 #### This scan identifies the services below as potential points of entry for Targets 1 and 2:
-- Target 1
+
+Target 1\
 | PORT     | STATE      | SERVICE    | VERSION                                      |
 |----------|------------|------------|----------------------------------------------|
 | 22/tcp   | open       | ssh        | OpenSSH 6.7p1 Debian 5+deb8u4 (protocol 2.0) |
 | 80/tcp   | open       | http       | Apache httpd 2.4.10 (Debian)                 |
 
-- Target 2
+Target 2\
 | PORT     | STATE      | SERVICE    | VERSION                                      |
 |----------|------------|------------|----------------------------------------------|
 | 22/tcp   | open       | ssh        | OpenSSH 6.7p1 Debian 5+deb8u4 (protocol 2.0) |
@@ -59,27 +60,27 @@ $ nmap -sV --version-all 192.168.1.1
 
 #### The following vulnerabilities were identified on Target 1:
 
-- Exposure of Information through Directory Listing (CWE-548)\
+- Exposure of Information through Directory Listing (CWE-548)
 - Severity: Low\
-![](Images/WP_directory.png)
-![](Images/michael_directory.png)
-![](Images/WP_xmlrpc.php)
-![](Images/(wp-login.php)
-![](Images/WP_OS_version.png)
+![](/Images/WP_directory.png)
+![](/Images/michael_directory.png)
+![](/Images/WP_xmlrpc.php.png)
+![](/Images/(wp-login.php.png)
+![](/Images/WP_OS_version.png)
 
 - Weak Password Requirements (CWE-521)
-- Severity: High
+- Severity: High\
 ![](Images/michael_ssh.png)
-![](Images/(cracking_steven.png)
+![](Images/cracking_steven.png)
 
 - Improper Access Control (CWE-284)
-- Severity: High
+- Severity: High\
 ![](Images/wp-config.php.png)
 ![](Images/WPDB_login.png)
 ![](Images/hashed_pwds.png)
 
 - Improper Privilege Management (CWE-269)
-- Severity: High
+- Severity: High\
 ![](Images/root_escalation.png)
 
 #### In addition to the vulnerabilites above, these vulnerabilities were exploited on Target 2:
