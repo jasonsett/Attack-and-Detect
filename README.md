@@ -148,3 +148,5 @@ $ cat /var/www/flag2.txt
   - _URL: 192.168.1.115/wordpress/wp-content/uploads/2018/11/flag3.png_
 
 ![](Images/t2_flag3.png)
+
+### A more detailed walkthrough of these attacks can be found in Attack/Offensive Presentation.pptx
