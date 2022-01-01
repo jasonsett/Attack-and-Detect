@@ -44,7 +44,7 @@ $ nmap -sV --version-all 192.168.1.1
 ```
 ![](Images/sVscan_NAT.png)
 
-#### This scan identifies the services below as potential points of entry for Targets 1 and 2:
+#### These scans identified the services below as potential points of entry for Targets 1 and 2:
 
 **Target 1**
 | PORT     | STATE      | SERVICE    | VERSION                                      |
@@ -61,9 +61,9 @@ $ nmap -sV --version-all 192.168.1.1
 #### The following vulnerabilities were identified on Target 1:
 
 1. Exposure of Information through Directory Listing (CWE-548)
-  - Severity: Low\
+-- Severity: Low\
 ![](/Images/WP_directory.png)
-![](/Images/michael_directory.png)
+![](/Images/michael_directory.PNG)
 ![](/Images/WP_xmlrpc.php.png)
 ![](/Images/wp-login.php.png)
 ![](/Images/WP_OS_version.png)
@@ -93,43 +93,54 @@ $ nmap -sV --version-all 192.168.1.1
 
 2. Command Injection (CWE-77)
 - Severity: High\
-TODO: INSERT SCREENSHOTS HERE
+![](Images/Ncat_listen.png)\
+![](Images/Ncat_broadcast.png)\
+![](Images/Ncat_established.png)\
+![](Images/t2_flag3_cmd.png)\
 
 ### Exploitation
 #### The Red Team was able to penetrate Target 1 and retrieve the following confidential data:
 - `flag1.txt`: _b9bbcb33e11b80be759c4e844862482d_
   - **Exploit Used: _CWE-548: Exposure of Information through Directory Listing_**
-  - _Command: '''bash $ nano /var/www/html/service.html_ '''
-![](Images/t1_flag1.png)
+'''bash
+$ nano /var/www/html/service.html
+'''
+![](Images/t1_flag1.png)\
 
 - `flag2.txt`: _fc3fd58dcdad9ab23faca6e9a36e581c_
   - **Exploit Used: _CWE-521: Weak Password Requirements_**
-  - _Command: $ cat /var/www/flag2.txt_\
-![](Images/t1_flag2.png)
+'''bash
+$ cat /var/www/flag2.txt
+'''
+![](Images/t1_flag2.png)\
 
 - `flag3.txt`: _afc01ab56b50591e7dccf93122770cd2_
   - **Exploit Used: _CWE-284: Improper Access Control_**
-  - _Command: $ mysql> SELECT * FROM wp_posts;_
-![](Images/t1_flag3-4.png)
+'''bash
+$ mysql> SELECT * FROM wp_posts;
+'''
+![](Images/t1_flag3-4.png)\
 
 - `flag4.txt`: _715dea6c055b9fe3337544932f2941ce_
   - **Exploit Used: _CWE-269: Improper Privilege Management**
-  - _Command: $ sudo python -c 'import pty;pty.spawn("bin/bash")'_
-![](Images/root_escalation.png)
-![](Images/t1_flag4.png)
+'''bash
+$ sudo python -c 'import pty;pty.spawn("bin/bash")'
+'''
+![](Images/root_escalation.png)\
+![](Images/t1_flag4.png)\
 
 #### The team also penetrated `Target 2` and retrieved additional confidential data:
 - `flag1.txt`: _a2c1f66d2b8051bd3a5874b5b6e43e21_
-  - **Exploit Used: _TODO: Identify the exploit used_**
+  - **Exploit Used: _Remote Code Execution_**
   - _URL: 192.168.1.115/vendor/PATH_
 ![](Images/t2_flag1.png)
 
 - `flag2.txt`: _6a8ed560f0b5358ecf844108048eb337_
-  - **Exploit Used: _TODO: Identify the exploit used_**
+  - **Exploit Used: _Command Injection_**
   - _Command: $ cat /var/www/flag2.txt_
 ![](Images/t2_flag2.png)
 
 - `flag3.txt`: _a0f568aa9de277887f37730d71520d9b_
-  - **Exploit Used: _TODO: Identify the exploit used_**
+  - **Exploit Used: _Command Injection_**
   - _URL: 192.168.1.115/wordpress/wp-content/uploads/2018/11/flag3.png_
 ![](Images/t2_flag3.png)
