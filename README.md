@@ -96,36 +96,36 @@ $ nmap -sV --version-all 192.168.1.1
 ![](Images/Ncat_listen.png)\
 ![](Images/Ncat_broadcast.png)\
 ![](Images/Ncat_established.png)\
-![](Images/t2_flag3_cmd.png)\
+![](Images/t2_flag3_cmd.png)
 
 ### Exploitation
 #### The Red Team was able to penetrate Target 1 and retrieve the following confidential data:
 - `flag1.txt`: _b9bbcb33e11b80be759c4e844862482d_
   - **Exploit Used: _CWE-548: Exposure of Information through Directory Listing_**
-'''bash
+```bash
 $ nano /var/www/html/service.html
-'''
+```
 ![](Images/t1_flag1.png)\
 
 - `flag2.txt`: _fc3fd58dcdad9ab23faca6e9a36e581c_
   - **Exploit Used: _CWE-521: Weak Password Requirements_**
-'''bash
+```bash
 $ cat /var/www/flag2.txt
-'''
+```
 ![](Images/t1_flag2.png)\
 
 - `flag3.txt`: _afc01ab56b50591e7dccf93122770cd2_
   - **Exploit Used: _CWE-284: Improper Access Control_**
-'''bash
+```bash
 $ mysql> SELECT * FROM wp_posts;
-'''
+```
 ![](Images/t1_flag3-4.png)\
 
 - `flag4.txt`: _715dea6c055b9fe3337544932f2941ce_
   - **Exploit Used: _CWE-269: Improper Privilege Management**
-'''bash
+```bash
 $ sudo python -c 'import pty;pty.spawn("bin/bash")'
-'''
+```
 ![](Images/root_escalation.png)\
 ![](Images/t1_flag4.png)\
 
@@ -137,7 +137,9 @@ $ sudo python -c 'import pty;pty.spawn("bin/bash")'
 
 - `flag2.txt`: _6a8ed560f0b5358ecf844108048eb337_
   - **Exploit Used: _Command Injection_**
-  - _Command: $ cat /var/www/flag2.txt_
+```bash
+$ cat /var/www/flag2.txt
+```
 ![](Images/t2_flag2.png)
 
 - `flag3.txt`: _a0f568aa9de277887f37730d71520d9b_
