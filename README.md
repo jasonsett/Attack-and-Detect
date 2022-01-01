@@ -105,14 +105,14 @@ $ nmap -sV --version-all 192.168.1.1
 ```bash
 $ nano /var/www/html/service.html
 ```
-![](Images/t1_flag1.png)\
+![](Images/t1_flag1.png)
 
 - `flag2.txt`: _fc3fd58dcdad9ab23faca6e9a36e581c_
   - **Exploit Used: _CWE-521: Weak Password Requirements_**
 ```bash
 $ cat /var/www/flag2.txt
 ```
-![](Images/t1_flag2.png)\
+![](Images/t1_flag2.png)
 
 - `flag3.txt`: _afc01ab56b50591e7dccf93122770cd2_
   - **Exploit Used: _CWE-284: Improper Access Control_**
@@ -127,16 +127,16 @@ $ mysql> SELECT * FROM wp_posts;
 $ sudo python -c 'import pty;pty.spawn("bin/bash")'
 ```
 ![](Images/root_escalation.png)\
-![](Images/t1_flag4.png)\
+![](Images/t1_flag4.png)
 
 #### The team also penetrated `Target 2` and retrieved additional confidential data:
 - `flag1.txt`: _a2c1f66d2b8051bd3a5874b5b6e43e21_
-  - **Exploit Used: _Remote Code Execution_**\
-  - _URL: 192.168.1.115/vendor/PATH_\
+  - **Exploit Used: _Remote Code Execution_**
+  - _URL: 192.168.1.115/vendor/PATH_
 ![](Images/t2_flag1.png)
 
 - `flag2.txt`: _6a8ed560f0b5358ecf844108048eb337_
-  - **Exploit Used: _Command Injection_**\
+  - **Exploit Used: _Command Injection_**
 ```bash
 $ cat /var/www/flag2.txt
 ```
@@ -144,5 +144,5 @@ $ cat /var/www/flag2.txt
 
 - `flag3.txt`: _a0f568aa9de277887f37730d71520d9b_
   - **Exploit Used: _Command Injection_**
-  - _URL: 192.168.1.115/wordpress/wp-content/uploads/2018/11/flag3.png_\
+  - _URL: 192.168.1.115/wordpress/wp-content/uploads/2018/11/flag3.png_
 ![](Images/t2_flag3.png)
